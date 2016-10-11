@@ -29,14 +29,30 @@
         zlf:titleTextColor="#00ff00"
         zlf:titleTextSize="40dp"/>
 
-    <com.zlf.zview.ZImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        zlf:image="@mipmap/ic_launcher"
-        zlf:imageScaleType="center"
-        zlf:titleText="Android"
-        zlf:titleTextColor="@color/colorPrimary"
-        zlf:titleTextSize="18sp"/>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="150dp">
+<!--        <com.zlf.zview.ZImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            zlf:image="@mipmap/ic_launcher"
+            zlf:imageScaleType="center"
+            zlf:titleText="Android"
+            zlf:titleTextColor="@color/colorPrimary"
+            zlf:titleTextSize="18sp"/>-->
+        <com.zlf.zview.ZVolumControlBar
+            zlf:bg="@mipmap/ic_launcher"
+            android:layout_marginLeft="20dp"
+            zlf:firstColor="#ff00ff"
+            zlf:secondColor="#00ff00"
+            zlf:kuaiCount="16"
+            zlf:circleWidth="20dp"
+            zlf:splitSize="20"
+            android:layout_width="150dp"
+            android:layout_height="150dp"/>
+    </LinearLayout>
+
 
     <com.zlf.zview.ZProgressBar
         android:layout_margin="20dp"

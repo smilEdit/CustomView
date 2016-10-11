@@ -11,7 +11,6 @@ import android.graphics.Rect;
 import android.text.TextPaint;
 import android.text.TextUtils;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
 
@@ -95,19 +94,17 @@ public class ZImageView extends View {
 
             if (specMode == MeasureSpec.EXACTLY)// match_parent , accurate
             {
-                Log.e("xxx", "EXACTLY");
                 mWidth = specSize;
             } else {
                 // 由图片决定的宽
                 int desireByImg = getPaddingLeft() + getPaddingRight() + mImage.getWidth();
                 // 由字体决定的宽
                 int desireByTitle = getPaddingLeft() + getPaddingRight() + mTextBound.width();
-
-                if (specMode == MeasureSpec.AT_MOST)// wrap_content
-                {
+                // wrap_content
+                if (specMode == MeasureSpec.AT_MOST) {
                     int desire = Math.max(desireByImg, desireByTitle);
                     mWidth = Math.min(desire, specSize);
-                    Log.e("xxx", "AT_MOST");
+
                 }
             }
             /***
@@ -115,13 +112,13 @@ public class ZImageView extends View {
              */
             specMode = MeasureSpec.getMode(heightMeasureSpec);
             specSize = MeasureSpec.getSize(heightMeasureSpec);
-            if (specMode == MeasureSpec.EXACTLY)// match_parent , accurate
-            {
+            // match_parent , accurate
+            if (specMode == MeasureSpec.EXACTLY) {
                 mHeight = specSize;
             } else {
                 int desire = getPaddingTop() + getPaddingBottom() + mImage.getHeight() + mTextBound.height();
-                if (specMode == MeasureSpec.AT_MOST)// wrap_content
-                {
+                // wrap_content
+                if (specMode == MeasureSpec.AT_MOST) {
                     mHeight = Math.min(desire, specSize);
                 }
             }
@@ -165,7 +162,7 @@ public class ZImageView extends View {
 
             //取消使用掉的快
             mRect.bottom -= mTextBound.height();
-//IMAGE_SCALE_FITXY
+            //IMAGE_SCALE_FITXY
             if (mImageScale == MeasureSpec.AT_MOST) {
                 canvas.drawBitmap(mImage, null, mRect, mPaint);
             } else {

@@ -33,4 +33,16 @@
         <attr name="circleWidth"/>
         <attr name="speed"/>
     </declare-styleable>
+
+    <attr name="bg" format="reference"/>
+    <attr name="splitSize" format="integer"/>
+    <attr name="kuaiCount" format="integer"/>
+    <declare-styleable name="ZVolumControlBar">
+        <attr name="firstColor"/>
+        <attr name="secondColor"/>
+        <attr name="circleWidth"/>
+        <attr name="bg"/>
+        <attr name="splitSize"/>
+        <attr name="kuaiCount"/>
+    </declare-styleable>
 </resources>
