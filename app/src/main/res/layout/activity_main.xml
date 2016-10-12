@@ -1,65 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:zlf="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/activity_main"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.zlf.zview.MainActivity">
+    >
 
-<com.zlf.zview.ZProgressBar
-    zlf:firstColor="#00ffff"
-    zlf:secondColor="#00ff00"
-    zlf:speed="40"
-    zlf:circleWidth="15dp"
-    android:layout_width="100dp"
-    android:layout_height="100dp"/>
-
-    <com.zlf.zview.ZTitleView
-        android:layout_width="wrap_content"
+    <com.zlf.zview.ExpandTabView
+        android:id="@+id/expandtab_view"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="18dp"
-        zlf:titleText="4356"
-        zlf:titleTextColor="#00ff00"
-        zlf:titleTextSize="40dp"/>
+        />
 
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="150dp">
-<!--        <com.zlf.zview.ZImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            zlf:image="@mipmap/ic_launcher"
-            zlf:imageScaleType="center"
-            zlf:titleText="Android"
-            zlf:titleTextColor="@color/colorPrimary"
-            zlf:titleTextSize="18sp"/>-->
-        <com.zlf.zview.ZVolumControlBar
-            zlf:bg="@mipmap/ic_launcher"
-            android:layout_marginLeft="20dp"
-            zlf:firstColor="#ff00ff"
-            zlf:secondColor="#00ff00"
-            zlf:kuaiCount="16"
-            zlf:circleWidth="20dp"
-            zlf:splitSize="20"
-            android:layout_width="150dp"
-            android:layout_height="150dp"/>
-    </LinearLayout>
-
-
-    <com.zlf.zview.ZProgressBar
-        android:layout_margin="20dp"
-        zlf:firstColor="@color/colorAccent"
-        zlf:secondColor="@color/colorPrimary"
-        zlf:speed="20"
-        zlf:circleWidth="50dp"
-        android:layout_width="180dp"
-        android:layout_height="180dp"/>
-</LinearLayout>
+</RelativeLayout>
