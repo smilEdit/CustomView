@@ -74,7 +74,7 @@ public class ExpandTabView extends LinearLayout implements OnDismissListener {
 		mTextArray = textArray;
 		for (int i = 0; i < viewArray.size(); i++) {
 			final RelativeLayout r = new RelativeLayout(mContext);
-			int maxHeight = (int) (displayHeight * 0.7);
+			int maxHeight = (int) (displayHeight * 0.5);
 			RelativeLayout.LayoutParams rl = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.FILL_PARENT, maxHeight);
 			rl.leftMargin = 10;
 			rl.rightMargin = 10;
