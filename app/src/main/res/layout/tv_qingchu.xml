@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:textColor="@color/text_color"
+    android:textSize="18dp"
+    android:gravity="center"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:id="@+id/tv_search_clear"
+    android:text="清除当前选择"
+    android:layout_height="46dp"/>

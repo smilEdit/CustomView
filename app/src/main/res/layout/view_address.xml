@@ -1,12 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:paddingTop="24dp"
               android:layout_width="match_parent"
-              android:layout_height="match_parent">
-<TextView
-    android:text="直辖市"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"/>
+              android:layout_height="match_parent"
+              android:background="@color/white"
+              android:orientation="vertical">
 
+    <TextView
+        style="@style/tv_search_sort"
+        android:text="直辖市"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_marginTop="8dp"
+        android:id="@+id/rv_address_zhixia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </android.support.v7.widget.RecyclerView>
+
+    <TextView
+        style="@style/tv_search_sort"
+        android:text="省"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_marginTop="8dp"
+        android:id="@+id/rv_address_sheng"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </android.support.v7.widget.RecyclerView>
+
+    <TextView
+        style="@style/tv_search_sort"
+        android:text="自治区"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_marginTop="8dp"
+        android:id="@+id/rv_address_zizhi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </android.support.v7.widget.RecyclerView>
+
+    <TextView
+        style="@style/tv_search_sort"
+        android:text="特别行政区"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_marginTop="8dp"
+        android:id="@+id/rv_address_tebie"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </android.support.v7.widget.RecyclerView>
+
+    <View
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray_line"/>
+
+    <include layout="@layout/tv_qingchu"/>
 </LinearLayout>

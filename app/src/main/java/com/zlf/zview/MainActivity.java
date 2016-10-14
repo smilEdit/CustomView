@@ -9,11 +9,14 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ExpandTabView expandTabView;
+    private ExpandTabView mExpandtabView;
+
+    private ViewSort    mViewSort;
+    private ViewPrice   mViewPrice;
+    private ViewAddress mViewAddress;
+    private ViewName    mViewName;
     private ArrayList<View> mViewArray = new ArrayList<View>();
-    private ViewLeft viewLeft;
-    private ViewMiddle viewMiddle;
-    private ViewRight viewRight;
+    private ArrayList<Double> mViewHeight = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,54 +31,60 @@ public class MainActivity extends AppCompatActivity {
 
     private void initView() {
 
-        expandTabView = (ExpandTabView) findViewById(R.id.expandtab_view);
-        viewLeft = new ViewLeft(this);
-        viewMiddle = new ViewMiddle(this);
-        viewRight = new ViewRight(this);
+        mExpandtabView = (ExpandTabView) findViewById(R.id.expandtab_view);
+        mViewSort = new ViewSort(this);
+        mViewPrice = new ViewPrice(this);
+        mViewAddress = new ViewAddress(this);
+        mViewName = new ViewName(this);
 
     }
 
     private void initVaule() {
 
-        mViewArray.add(viewLeft);
-        mViewArray.add(viewMiddle);
-        mViewArray.add(viewRight);
+        mViewArray.add(mViewSort);
+        mViewArray.add(mViewAddress);
+        mViewArray.add(mViewPrice);
+        mViewArray.add(mViewName);
         ArrayList<String> mTextArray = new ArrayList<String>();
-        mTextArray.add("距离");
-        mTextArray.add("区域");
-        mTextArray.add("距离");
-        expandTabView.setValue(mTextArray, mViewArray);
-        expandTabView.setTitle(viewLeft.getShowText(), 0);
-        expandTabView.setTitle(viewMiddle.getShowText(), 1);
-        expandTabView.setTitle(viewRight.getShowText(), 2);
+        mTextArray.add("全部");
+        mTextArray.add("地区");
+        mTextArray.add("价格");
+        mTextArray.add("匿名");
+        mViewHeight.add(0.7);
+        mViewHeight.add(0.71);
+        mViewHeight.add(0.25);
+        mViewHeight.add(0.3);
+        mExpandtabView.setValue(mTextArray,mViewArray,mViewHeight);
+        mExpandtabView.setTitle(mViewSort.getShowText(), 0,false);
+        mExpandtabView.setTitle(mViewAddress.getShowText(), 1,false);
+        mExpandtabView.setTitle(mViewPrice.getShowText(), 2,false);
+        mExpandtabView.setTitle(mViewName.getShowText(), 3,false);
 
     }
 
     private void initListener() {
-
-        viewLeft.setOnSelectListener(new ViewLeft.OnSelectListener() {
-
+        mViewPrice.setOnSelectListener(new ViewPrice.OnSelectListener() {
             @Override
             public void getValue(String distance, String showText) {
-                onRefresh(viewLeft, showText);
+                onRefresh(mViewPrice, showText);
             }
         });
-
-        viewMiddle.setOnSelectListener(new ViewMiddle.OnSelectListener() {
-
+        mViewAddress.setOnSelectListener(new ViewAddress.OnSelectListener() {
             @Override
             public void getValue(String showText) {
-
-                onRefresh(viewMiddle,showText);
-
+                onRefresh(mViewAddress,showText);
             }
         });
-
-        viewRight.setOnSelectListener(new ViewRight.OnSelectListener() {
-
+        mViewSort.setOnSelectListener(new ViewSort.OnSelectListener() {
+            @Override
+            public void getValue(String showText) {
+                onRefresh(mViewSort,showText);
+            }
+        });
+        mViewName.setOnSelectListener(new ViewPrice.OnSelectListener() {
             @Override
             public void getValue(String distance, String showText) {
-                onRefresh(viewRight, showText);
+                onRefresh(mViewName,showText);
             }
         });
 
@@ -83,10 +92,10 @@ public class MainActivity extends AppCompatActivity {
 
     private void onRefresh(View view, String showText) {
 
-        expandTabView.onPressBack();
+        mExpandtabView.onPressBack();
         int position = getPositon(view);
-        if (position >= 0 && !expandTabView.getTitle(position).equals(showText)) {
-            expandTabView.setTitle(showText, position);
+        if (position >= 0 && !mExpandtabView.getTitle(position).equals(showText)) {
+            mExpandtabView.setTitle(showText, position,true);
         }
         Toast.makeText(MainActivity.this, showText, Toast.LENGTH_SHORT).show();
 
@@ -104,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
 
-        if (!expandTabView.onPressBack()) {
+        if (!mExpandtabView.onPressBack()) {
             finish();
         }
 
