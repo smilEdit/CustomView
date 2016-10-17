@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
     >
 
-    <com.zlf.zview.ExpandTabView
+<!--    <com.zlf.zview.ExpandTabView
         android:id="@+id/expandtab_view"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        />
-
-</RelativeLayout>
+        />-->
+    <com.zlf.zview.ZHorizontalNumProgress
+        android:id="@+id/h_progress"
+        android:progress="20"
+        android:layout_margin="20dp"
+        app:progress_text_size="10sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</LinearLayout>
