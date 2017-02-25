@@ -5,16 +5,16 @@
                 xmlns:app="http://schemas.android.com/apk/res-auto"
     >
 
-<!--    <com.zlf.zview.ExpandTabView
+    <com.zlf.zview.ExpandTabView
         android:id="@+id/expandtab_view"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        />-->
-    <com.zlf.zview.ZHorizontalNumProgress
-        android:id="@+id/h_progress"
-        android:progress="20"
-        android:layout_margin="20dp"
-        app:progress_text_size="10sp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        />
+    <!--<com.zlf.zview.ZHorizontalNumProgress-->
+        <!--android:id="@+id/h_progress"-->
+        <!--android:progress="20"-->
+        <!--android:layout_margin="20dp"-->
+        <!--app:progress_text_size="10sp"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"/>-->
 </LinearLayout>
